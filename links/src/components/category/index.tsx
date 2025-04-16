@@ -15,7 +15,8 @@ export function Category( { name, icon, isSelected, ...rest }: Props ) {
   return (
     <Pressable style={styles.container} {...rest}>
       <MaterialIcons name={icon} size={16} color={color} />
-      <Text style={[styles.name, {color}]}>{ name }</Text>{/* [], {} o que está dentro do obj sobreescreve o que está fora */}
+      {/* [], {} o que está dentro do obj sobreescreve o que está fora */}
+      <Text style={[styles.name, {color}]}>{ name }</Text>
     </Pressable>
   );
 }
