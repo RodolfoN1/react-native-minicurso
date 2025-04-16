@@ -6,14 +6,16 @@ import { styles } from "./styles";
 // O Pressable é um componente que tem as propriedades/métodos de um TouchableOpacity
 type Props = PressableProps & {
   name: string;
+  isSelected: boolean;
   icon: keyof typeof MaterialIcons.glyphMap; // glyphMap é onde estão os ícones
 }
 
-export function Category( { name, icon, ...rest }: Props ) {
+export function Category( { name, icon, isSelected, ...rest }: Props ) {
+  const color = isSelected ? colors.green[300] : colors.gray[400];
   return (
     <Pressable style={styles.container} {...rest}>
-      <MaterialIcons name={icon} size={16} color={colors.gray[400]} />
-      <Text style={styles.name}>{ name }</Text>
+      <MaterialIcons name={icon} size={16} color={color} />
+      <Text style={[styles.name, {color}]}>{ name }</Text>{/* [], {} o que está dentro do obj sobreescreve o que está fora */}
     </Pressable>
   );
 }
