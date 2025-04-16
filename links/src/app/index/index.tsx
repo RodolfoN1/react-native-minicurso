@@ -22,7 +22,9 @@ export default function Index() {
       </View>
 
 
-      <Category />
+      <Category name="Projetos" icon="code" />
+      <Category name="Site" icon="language" />
+      <Category name="Vídeo" icon="movie" />
     </View>
   );
 } 
