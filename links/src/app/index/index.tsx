@@ -1,8 +1,10 @@
 import { View, Image, TouchableOpacity } from "react-native";
 import { styles } from "./styles"
 import { MaterialIcons } from "@expo/vector-icons";
+
 import { colors } from "@/styles/colors";
-import { Category } from "@/components/category";
+import { Categories } from "@/components/categories";
+import { Link } from "@/components/link";
 
 export default function Index() {
   return (
@@ -17,14 +19,21 @@ export default function Index() {
           existe a props de activeOpacity={0.3} que define a opacidade
         */}
         <TouchableOpacity>
-          <MaterialIcons name="add" size={32} color={colors.green[300]} />
+          <MaterialIcons 
+            name="add" size={32} 
+            color={colors.green[300]} 
+          />
         </TouchableOpacity>
       </View>
 
+      <Categories />
 
-      <Category name="Projetos" icon="code" isSelected/>
-      <Category name="Site" icon="language" isSelected={false}/>
-      <Category name="Vídeo" icon="movie" isSelected={false}/>
+      <Link 
+        name="Rocketseat" 
+        url="https://rocketseat.com.br" 
+        onDetails={() => console.log('clicou')}
+      />
+
     </View>
   );
 } 
